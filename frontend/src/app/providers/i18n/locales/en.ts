@@ -1,7 +1,7 @@
 export default {
-  translation: {
-    homePage: {
-      greetings: 'Welcome',
+    translation: {
+        homePage: {
+            greetings: 'Welcome',
+        },
     },
-  },
 }

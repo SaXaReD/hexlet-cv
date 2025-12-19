@@ -9,56 +9,56 @@ import stylistic from '@stylistic/eslint-plugin'
 import fsdPlugin from 'eslint-plugin-fsd-lint'
 
 export default tseslint.config([
-  {
-    ignores: [
-      'node_modules/',
-      'static/',
-      '.cache/',
-      '*.config.js',
-      '**/*.d.ts',
-      '**/toDelete/'
-    ],
-  },
-  stylistic.configs.recommended,
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-      fsdPlugin.configs.recommended,
-    ],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+    {
+        ignores: [
+            'node_modules/',
+            'static/',
+            '.cache/',
+            '*.config.js',
+            '**/*.d.ts',
+            '**/toDelete/'
+        ],
     },
-    ignores: ['**/*.test.ts'],
-    plugins: { react, fsd: fsdPlugin, '@stylistic': stylistic, },
-    rules: {
-      'fsd/forbidden-imports': 'error',
-      'fsd/no-relative-imports': 'error',
-      'fsd/no-public-api-sidestep': 'error',
-      '@stylistic/indent': ['error', 4,],
-      '@stylistic/jsx-indent-props': ['error', 4],
-      'array-element-newline': ['error', 'consistent'],
-      'object-property-newline': ['error', { allowAllPropertiesOnSameLine: false }],
-      'block-spacing': ['error', 'always'],
-      'brace-style': ['error', '1tbs', { allowSingleLine: true }],
-      'comma-spacing': ['error', { before: false, after: true }],
-      'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-      'space-before-blocks': ['error', 'always'],
-      'space-infix-ops': ['error', { int32Hint: false }],
-      'no-unused-vars': 'warn',
-      '@stylistic/comma-dangle': [
-        'error',
-        {
-          arrays: 'always-multiline',
-          objects: 'always-multiline',
-          functions: 'never',
+    stylistic.configs.recommended,
+    globalIgnores(['dist']),
+    {
+        files: ['**/*.{ts,tsx}'],
+        extends: [
+            js.configs.recommended,
+            tseslint.configs.recommended,
+            reactHooks.configs['recommended-latest'],
+            reactRefresh.configs.vite,
+            fsdPlugin.configs.recommended,
+        ],
+        languageOptions: {
+            ecmaVersion: 2020,
+            globals: globals.browser,
         },
-      ],
+        ignores: ['**/*.test.ts'],
+        plugins: { react, fsd: fsdPlugin, '@stylistic': stylistic, },
+        rules: {
+            'fsd/forbidden-imports': 'error',
+            'fsd/no-relative-imports': 'error',
+            'fsd/no-public-api-sidestep': 'error',
+            '@stylistic/indent': ['error', 4,],
+            '@stylistic/jsx-indent-props': ['error', 4],
+            'array-element-newline': ['error', 'consistent'],
+            'object-property-newline': ['error', { allowAllPropertiesOnSameLine: false }],
+            'block-spacing': ['error', 'always'],
+            'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+            'comma-spacing': ['error', { before: false, after: true }],
+            'key-spacing': ['error', { beforeColon: false, afterColon: true }],
+            'space-before-blocks': ['error', 'always'],
+            'space-infix-ops': ['error', { int32Hint: false }],
+            'no-unused-vars': 'warn',
+            '@stylistic/comma-dangle': [
+                'error',
+                {
+                    arrays: 'always-multiline',
+                    objects: 'always-multiline',
+                    functions: 'never',
+                },
+            ],
+        },
     },
-  },
 ])
